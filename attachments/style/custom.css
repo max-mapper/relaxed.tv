@@ -156,6 +156,11 @@ body {
   padding: 0 5%;
 }
 
+.video_list {
+  max-height: 300px;
+  overflow: auto;
+}
+
 .videos p, 
 .video p {
   width: auto;
