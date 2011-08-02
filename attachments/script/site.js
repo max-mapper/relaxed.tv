@@ -14,7 +14,11 @@ app.handler = function(route) {
 
 app.routes = {
   home: function() {
-    util.render('videoList', 'video_list', {videos:[{title: "woo"}]});
+    relaxedtv.showVideos({showFirst: true});
+  },
+  video: function(id) {
+    relaxedtv.showVideos();
+    relaxedtv.showVideo(id);
   }
 }
 

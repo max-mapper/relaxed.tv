@@ -6,7 +6,7 @@ ddoc =
   { _id:'_design/relaxedtv'
   , rewrites :
     [ {from:"/", to:'index.html'}
-    , {from:"/api/videos", to:'_view/videos', query: {"descending": true}}
+    , {from:"/api/videos", to:'_view/videos'}
     , {from:"/api", to:'../../'}
     , {from:"/api/*", to:'../../*'}
     , {from:"/*", to:'*'}
@@ -25,11 +25,9 @@ ddoc.views = {
   },
   videos: {
     map: function(doc) {
-      if (doc.url && doc.title && doc.created_at) {
-        emit(doc.created_at, doc);
-      }
+      if (doc.created_at && doc.title && doc.url) emit(doc.created_at, doc);
     }
-  }
+  },
 };
 
 ddoc.validate_doc_update = function (newDoc, oldDoc, userCtx) {

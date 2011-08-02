@@ -145,13 +145,13 @@ body {
 }
 
 .videos {
-  width: 40%;
+  width: 30%;
   float: left;
   padding: 0 5%;
 }
 
 .video {
-  width: 40%;
+  width: 50%;
   float: right;
   padding: 0 5%;
 }
@@ -224,13 +224,6 @@ body {
 
 /* headings */
 
-.logo {
-  margin: 0 auto;
-  text-align: center;
-  width: 706px;
-  height: 120px;
-  display: block;
-}
 
 h1, h2, h3, h4,
 .h1, .h2, .h3, .h4 {
@@ -549,8 +542,7 @@ input.submit:active {
   }
   
   .logo {
-    width: 430px;
-    background-position: 50% -125px;
+
   }
 }
 

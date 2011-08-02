@@ -181,7 +181,7 @@ var util = function() {
      .removeAttr('checked')
      .removeAttr('selected');
   }
-  
+
   return {
     inURL: inURL,
     registerEmitter: registerEmitter,
@@ -196,6 +196,6 @@ var util = function() {
     getBaseURL: getBaseURL,
     resetForm: resetForm,
     delay: delay,
-    persist: persist,
+    persist: persist
   };
 }();

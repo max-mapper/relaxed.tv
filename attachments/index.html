@@ -23,6 +23,7 @@
 	<script type="text/javascript" src="script/lib/sammy-0.6.3.min.js"></script>
 	<script type="text/javascript" src="script/lib/underscore.js"></script>
 	<script type="text/javascript" src="script/lib/microevent.js"></script>
+	<script type="text/javascript" src="script/relaxedtv.js"></script>
 	<script type="text/javascript" src="script/util.js"></script>
 	<script type="text/javascript" src="script/site.js"></script>
 </head> 
@@ -30,7 +31,7 @@
   <div class="header">
     <div class="container">
       <p class="claim">sit back, relax and learn about couchdb</p>
-      <h1 class="logo">Relaxed.TV</h1>
+      <img class="logo" src="images/relaxedtvlogo.png"></img>
     </div>
   </div>
 
@@ -44,32 +45,32 @@
              
            </ul>
            <p>
-             Peep these sick vidzz!
+             Video upload form coming soon!
            </p>
          </div>
 
          <div class="video">
-     <iframe width="425" height="349" src="http://www.youtube.com/embed/w-Vkg25269w" frameborder="0" allowfullscreen></iframe>
+           
          </div>
        </div>
     </div>
   </div>
   <script type='text/mustache' class="videoListTemplate">
     {{#videos}}
-      <li><a href="#" data-id="{{id}}" class="videoListItem">&#x261E; {{title}}</a></li>
+      <li><a href="#video/{{_id}}" data-id="{{_id}}" class="videoListItem">&#x261E; {{title}}</a></li>
     {{/videos}}
     </ul>
 	</script>
 	
-	<script type='text/mustache' class="videoTemplate">
-  	<div class="video">
-      <h2>{{title}}</h2>
-      <p>
-        <img src="images/{{id}}">
-        pizza cats wooo
-      </p>
-    </div>
+	<script type='text/mustache' class="youtubeTemplate">
+    <iframe width="425" height="349" src="http://www.youtube.com/embed/{{videoid}}" frameborder="0" allowfullscreen></iframe>
 	</script>
+	
+	<script type='text/mustache' class="vimeoTemplate">
+    <iframe src="http://player.vimeo.com/video/{{videoid}}?title=1&byline=0&portrait=0&" width="425" height="349" frameborder="0"></iframe>
+	</script>
+	
+	
 	
 </body>
 </html>
