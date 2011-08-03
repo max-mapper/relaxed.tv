@@ -45,7 +45,7 @@
              
            </ul>
            <p>
-             Video upload form coming soon!
+             <a href="#upload">Add a video!</a>
            </p>
          </div>
 
@@ -55,6 +55,14 @@
        </div>
     </div>
   </div>
+  
+  <div class="dialog-overlay">&nbsp;</div>
+  <div class="dialog ui-draggable">
+  	<div class="dialog-frame">
+  		<div class="dialog-content dialog-border"></div>
+  	</div>
+  </div>
+  
   <script type='text/mustache' class="videoListTemplate">
     {{#videos}}
       <li><a href="#video/{{_id}}" data-id="{{_id}}" class="videoListItem">&#x261E; {{title}}</a></li>
@@ -70,7 +78,48 @@
     <iframe src="http://player.vimeo.com/video/{{videoid}}?title=1&byline=0&portrait=0&" width="425" height="349" frameborder="0"></iframe>
 	</script>
 	
-	
+	<script class="uploadTemplate" type="text/mustache">
+    <div class="devseed alpha">
+      <div id="content" class="page-content clear-block">
+        <div id="content-wrapper">
+          <div>
+            <div class="form form-layout-default clear-block">
+              <input type="hidden" name="type" value="single_upload">
+              <div class="column-main">
+                <form action="#" accept-charset="UTF-8" method="post" id="upload-form" enctype="multipart/form-data">
+                  <div class="column-wrapper clear-block">
+                    <fieldset class="fieldset titled collapsible collapsed tao-processed">
+                      <legend><span class="fieldset-title"><a class="active">Video Details</a></span></legend>
+                      <div class="fieldset-content clear-block ">
+                        <div class="form-item form-option">
+                          <label for="url">Title</label>
+                          <input type="text" maxlength="128" name="title" id="video-title" value="" class="form-text fluid persist">
+                          <div class="description">
+                            What is the title of the video?
+                          </div>
+                        </div>
+                        <div class="form-item form-option">
+                          <label for="url">Video URL</label>
+                          <input type="text" maxlength="128" name="url" id="video-url" value="" class="form-text fluid persist">
+                          <div class="description">
+                            What is the full URL for this video? Must be Youtube or Vimeo e.g. http://vimeo.com/26147136
+                          </div>
+                        </div>
+                      </div>
+                    </fieldset>
+                    <div class="buttons">
+                      <input type="submit" name="op" id="edit-submit-1" value="Submit" class="form-submit">
+                      <span class="smallMessage">Your video will be added to Relaxed.tv after it gets spam-checked</span>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </script>
 	
 </body>
 </html>

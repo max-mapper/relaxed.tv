@@ -25,6 +25,7 @@ ddoc.views = {
   },
   videos: {
     map: function(doc) {
+      if (doc.verified === false) return;
       if (doc.created_at && doc.title && doc.url) emit(doc.created_at, doc);
     }
   },
