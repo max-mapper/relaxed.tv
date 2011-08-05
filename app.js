@@ -38,6 +38,9 @@ ddoc.validate_doc_update = function (newDoc, oldDoc, userCtx) {
   if (oldDoc && userCtx.roles.indexOf('_admin') === -1) {
     throw "Only admin can modify documents on this database.";
   }
+  if (!oldDoc && userCtx.roles.indexOf('_admin') === -1) {
+    newDoc.verified = false;
+  }
 };
 
 couchapp.loadAttachments(ddoc, path.join(__dirname, 'attachments'));
